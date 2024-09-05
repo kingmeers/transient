@@ -1,5 +1,7 @@
 # Transient - YouTube Video Timestamp Generator
 
+![Transient App Icon](assets/transient.png)
+
 **Transient** is a simple desktop application that helps you generate video timestamps for YouTube descriptions. You can drop any `.mp4` or `.mov` video into the app, and it will convert the audio to text and provide timestamps that you can copy directly into your YouTube video description.
 
 ## Features
