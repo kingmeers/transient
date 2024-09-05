@@ -34,7 +34,7 @@
 #### 1. Clone or Download this Repository
 
 ```bash
-git clone https://github.com/your-repo/transient
+git clone https://github.com/kingmeers/transient
 cd transient
 ```
 
@@ -53,11 +53,11 @@ Run the following command to install the necessary Python packages:
 
 ```bash
 pip install -r requirements.txt
+pip install git+https://github.com/openai/whisper.git
 ```
 
 The `requirements.txt` includes:
 
-- `openai-whisper`
 - `pydub`
 - `PySide6`
 - `moviepy`

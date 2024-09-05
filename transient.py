@@ -283,9 +283,9 @@ class TranscriptionApp(QMainWindow):
 
 # Main entry point
 if __name__ == "__main__":
-    app = QApplication([])
-
-    window = TranscriptionApp()
-    window.show()
-
-    app.exec()
+    # Protect entry point to avoid multiple app instances
+    if not QApplication.instance():
+        app = QApplication([])
+        window = TranscriptionApp()
+        window.show()
+        app.exec()
