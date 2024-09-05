@@ -75,6 +75,10 @@ This will open the GUI window where you can drag and drop your video or select a
 
 #### 5. Packaging the App (Optional)
 
+\*Honestly, this is such a hassle, PyInstaller has a tonne of problems, especially with QThread's & Whisper, hence my workaround in the .spec file.
+
+Honestly way better to just run the transient.py file\*
+
 If you'd like to package **Transient** into an executable for distribution:
 
 1. **For macOS**:
@@ -84,14 +88,7 @@ If you'd like to package **Transient** into an executable for distribution:
    pyinstaller --windowed --icon=t.icns transient.spec
    ```
 
-2. **For Windows**:
-   Use PyInstaller to create an `.exe` file:
-
-   ```bash
-   pyinstaller --windowed --onefile --icon=icon.ico transient.spec
-   ```
-
-Both methods will generate an executable in the `dist` folder.
+This will generate an executable in the `dist` folder as well.
 
 ## Using Transient
 
