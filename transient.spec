@@ -1,15 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 import os
+import whisper
 
-# Get the absolute path for the Whisper assets directory
-whisper_assets_dir = '/Users/samir/Projects/Apps/transient-app/env/lib/python3.10/site-packages/whisper/assets/'
+# Get the dynamic path for the Whisper assets directory
+whisper_assets_dir = os.path.join(os.path.dirname(whisper.__file__), 'assets')
 
 a = Analysis(
     ['transient.py'],
     pathex=[],
     binaries=[],
-    datas=[(whisper_assets_dir, 'whisper/assets')],  # Include the Whisper assets
+    datas=[(whisper_assets_dir, 'whisper/assets')],  # Include the Whisper assets dynamically
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -46,8 +47,8 @@ app = BUNDLE(
     exe,
     name='transient.app',  # Specify the .app extension for macOS
     icon='t.icns',  # Add your icon file here
-    bundle_identifier='com.transient.app',  # You can customize this if needed
+    bundle_identifier='com.transient.app',  # Customize this if needed
     info_plist={
-        'NSHighResolutionCapable': 'True',  # Optional: Support high-resolution screens
+        'NSHighResolutionCapable': 'True',  # Support high-resolution screens
     }
 )
